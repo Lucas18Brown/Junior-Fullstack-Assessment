@@ -1,0 +1,26 @@
+@use 'sass:map';
+
+$containers: (
+  "default-width": 90vw,
+  "desktop": (
+    "max-width": 90vw
+  ),
+  "mobile": (
+    "breakpoint": 600px,
+    "max-width": calc(100vw - 30px)
+  )
+); // Usage: map.get($containers, "desktop", "max-width");
+
+$desktop: '(min-width: #{map.get($containers, "mobile", "breakpoint")})'; // Usage: @media #{$desktop} { ... }
+$mobile: '(max-width: calc(#{map.get($containers, "mobile", "breakpoint")} - 1px))'; // Usage: @media #{$mobile} { ... }
+
+.container {
+  width: map.get($containers, "default-width");
+  max-width: map.get($containers, "desktop", "max-width");
+  margin: 0 auto;
+
+  @media #{$mobile} {
+    width: map.get($containers, "mobile", "max-width");
+    max-width: map.get($containers, "mobile", "max-width");
+  }
+}

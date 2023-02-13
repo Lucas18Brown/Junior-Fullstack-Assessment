@@ -37,3 +37,21 @@ Amongst other things, we are mainly are assessing your ability to solve typical 
 6. [FRONTEND] Some of the records have a 'featured' property that is true. Make any cards for a featured record have a gold border.
 
 7. [MIXED] Add a new record of a family pet or a pet from TV to the database seeds. Give this pet a special property and make it's card stand out visually amongst the rest.
+
+## Bonus issues
+
+If you are applying for a non-junior job, or found the above issues easy to solve, you can pick a couple of the bonus issues to tackle. These are more advanced, and will allow us to learn more about you.
+
+1. [API] Implement pagination for the API, allowing the frontend to display a set number of pet records per page.
+
+2. [MIXED] Add the ability to search for pets by name, breed, or species.
+
+3. [API] Add the ability to create, update, and delete pet records through the API. Implement proper authentication and authorization to ensure that only authorized users can perform these actions.
+
+4. [FRONTEND] Implement a modal window that pops up when a more info button is clicked, displaying more detailed information about the pet, including an image and a description.
+
+5. [API] Add the ability to sort the pet records by multiple criteria, such as species, breed, and age.
+
+6. [FRONTEND] The page has has a responsive design for mobile and desktop. Implement a middle state for tablets. 
+
+7. [MIXED] Implement an error handling mechanism for both the frontend and the API, displaying appropriate error messages to the user in case of any errors or failures.

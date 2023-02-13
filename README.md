@@ -38,7 +38,7 @@ Amongst other things, we are mainly are assessing your ability to solve typical 
 
 7. [MIXED] Add a new record of a family pet or a pet from TV to the database seeds. Give this pet a special property and make it's card stand out visually amongst the rest.
 
-## Bonus issues
+## Bonus issues
 
 If you are applying for a non-junior job, or found the above issues easy to solve, you can pick a couple of the bonus issues to tackle. These are more advanced, and will allow us to learn more about you.
 

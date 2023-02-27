@@ -37,7 +37,7 @@ class Pet {
         <p class="pets__card__info">Breed: ${this.breed}</p>
         <p class="pets__card__info">Favorite Food: ${this.favoriteFood}</p>
         <p class="pets__card__info">Favorite Toy: ${this.favoriteToy}</p>
-        <button type="button" class="pets__card__button">More Info</button>
+        <button type="button" class="pets__card__button" onclick="showModal('${this.name}', '${this.description}', '${this.image}')">More Info</button>
       </div>
     `;
   }
@@ -51,6 +51,36 @@ class Pet {
       petsGrid.innerHTML += pet.generateCard();
     });
   }
+}
+
+function showModal(petName, petDescription, petImage) {
+  // Create the modal element
+  const modal = document.createElement('div');
+  modal.classList.add('modal');
+
+  // Create the modal content
+  const modalContent = document.createElement('div');
+  modalContent.classList.add('modal__content');
+  modalContent.innerHTML = `
+    <img class="modal__image" src="${petImage}">
+    <div class="modal__info">
+      <h2 class="modal__info__title">${petName}</h2>
+      <p class="modal__info__description">${petDescription}</p>
+    </div>
+  `;
+
+  // Add the modal content to the modal element
+  modal.appendChild(modalContent);
+
+  // Add the modal element to the page
+  document.body.appendChild(modal);
+
+  // Add a click event listener to the modal to close it when clicked
+  modal.addEventListener('click', event => {
+    if (event.target === modal) {
+      modal.remove();
+    }
+  });
 }
 
 const fetchPets = species => {
@@ -70,7 +100,6 @@ const fetchPets = species => {
     });
   });
 }
-
 
 // Check params for "species" and fetch pets accordingly
 const params = new URLSearchParams(window.location.search);

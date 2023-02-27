@@ -118,6 +118,10 @@ main {
     border: 3px solid #EFEFEF;
     padding: 20px;
 
+    &__featured {
+      border: 3px solid gold;
+    }
+
     &__title {
       text-align: center;
       font-size: 18px;

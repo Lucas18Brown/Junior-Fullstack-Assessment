@@ -53,27 +53,6 @@ class Pet {
   }
 }
 
-const moreInfoButtons = document.querySelectorAll("pets__card__button");
-
-console.log(moreInfoButtons)
-
-moreInfoButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const petName = button.parentNode
-  })
-});
-
-function generateModal(pet) {
-  return `
-    <div class="modal__content">
-      <span class="modal__close">&times;</span>
-      <h2 class="modal__title"></h2>
-      <img class="modal__image" src="" alt="">
-      <p class="modal__description">description</p>
-    </div>
-    `;
-}
-
 const fetchPets = species => {
   fetch(`http://127.0.0.1:3000/api/v1/pets${species ? `?species=${species}` : ''}`).then(response => response.json()).then(data => {
     data.forEach(pet => {
@@ -91,6 +70,7 @@ const fetchPets = species => {
     });
   });
 }
+
 
 // Check params for "species" and fetch pets accordingly
 const params = new URLSearchParams(window.location.search);

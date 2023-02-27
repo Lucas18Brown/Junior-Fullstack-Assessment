@@ -171,6 +171,9 @@ main {
   border: 3px solid #EFEFEF;
   padding: 20px;
 }
+.pets__card__featured {
+  border: 3px solid gold;
+}
 .pets__card__title {
   text-align: center;
   font-size: 18px;

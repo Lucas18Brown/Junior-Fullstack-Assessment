@@ -49,9 +49,12 @@
     font-size: 14px;
     padding: 10px 20px;
     display: inline-block;
+    transition: opacity, color 0.3s;
+    opacity: 1;
 
     &:hover {
       color: #898989;
+      opacity: 0.65;
     }
   }
 }

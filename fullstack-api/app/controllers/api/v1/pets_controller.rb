@@ -5,7 +5,11 @@ module Api
     class PetsController < ApplicationController
 
       def index
-        pets = Pet.order(featured: :desc, name: :asc)
+        pets = if params[:species] && %w[dog cat].include?(params[:species])
+                 Pet.where(species: params[:species]).order(featured: :asc, name: :asc)
+               else
+                 Pet.order(featured: :asc, name: :asc)
+               end
         render json: pets, status: :ok
       end
 

@@ -91,5 +91,7 @@ arthur = Pet.create(
   favorite_food: "cheese",
   favorite_toy: "teddy",
   featured: true,
-  annoying_woof: true
+  annoying_woof: true,
+  description: "A great dog, who is friendly and always ready for a hug. P.S He doesnt like walks.",
+  image: "https://images.unsplash.com/photo-1517849845537-4d257902454a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZG9nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1600&q=60"
 )

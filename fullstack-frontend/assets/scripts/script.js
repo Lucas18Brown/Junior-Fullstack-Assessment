@@ -5,7 +5,7 @@ const pushPet = pet => {
 }
 
 class Pet {
-  constructor(name, species, age, color, breed, favoriteFood, favoriteToy, featured = false, annoying_woof = false) {
+  constructor(name, species, age, color, breed, favoriteFood, favoriteToy, featured = false, annoying_woof = false, description, image) {
     this.name = name;
     this.species = species;
     this.age = age;
@@ -15,6 +15,8 @@ class Pet {
     this.favoriteToy = favoriteToy;
     this.featured = featured;
     this.annoying_woof = annoying_woof;
+    this.description = description;
+    this.image = image
   }
 
   specialProperty() {
@@ -95,7 +97,9 @@ const fetchPets = species => {
         pet.favorite_food,
         pet.favorite_toy,
         pet.featured,
-        pet.annoying_woof
+        pet.annoying_woof,
+        pet.description,
+        pet.image
       ));
     });
   });

@@ -171,9 +171,6 @@ main {
   border: 3px solid #EFEFEF;
   padding: 20px;
 }
-.pets__card__featured {
-  border: 3px solid gold;
-}
 .pets__card__title {
   text-align: center;
   font-size: 18px;
@@ -203,6 +200,16 @@ main {
   border: none;
   margin-top: 30px;
   cursor: pointer;
+}
+.pets__featured {
+  border: 3px solid gold;
+}
+.pets__annoying-woof {
+  background: #7AACC3;
+}
+.pets__annoying-woof .pets__card__button {
+  background-color: #fff;
+  color: #000000;
 }
 
 .main-footer {

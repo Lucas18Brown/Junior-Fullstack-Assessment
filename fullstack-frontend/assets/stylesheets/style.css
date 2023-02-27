@@ -212,6 +212,57 @@ main {
   color: #000000;
 }
 
+.modal {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 400px;
+  min-height: 400px;
+  background-color: #fff;
+  padding: 20px;
+  align-items: center;
+}
+.modal__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.modal__image {
+  width: 100%;
+  height: 500px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.modal__info {
+  padding: 20px 0;
+}
+.modal__info__title {
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.modal__info__description {
+  margin-top: 0;
+  line-height: 21px;
+  padding-top: 10px;
+  border-top: 1px solid #EFEFEF;
+}
+.modal__open {
+  display: block;
+}
+
 .main-footer {
   background-color: #7AACC3;
   width: 100%;

@@ -5,7 +5,7 @@ const pushPet = pet => {
 }
 
 class Pet {
-  constructor(name, species, age, color, breed, favoriteFood, favoriteToy, featured = false, annoying_woof = false) {
+  constructor(name, species, age, color, breed, favoriteFood, favoriteToy, featured = false, annoying_woof = false, description, image) {
     this.name = name;
     this.species = species;
     this.age = age;
@@ -15,6 +15,8 @@ class Pet {
     this.favoriteToy = favoriteToy;
     this.featured = featured;
     this.annoying_woof = annoying_woof;
+    this.description = description;
+    this.image = image
   }
 
   specialProperty() {
@@ -37,7 +39,7 @@ class Pet {
         <p class="pets__card__info">Breed: ${this.breed}</p>
         <p class="pets__card__info">Favorite Food: ${this.favoriteFood}</p>
         <p class="pets__card__info">Favorite Toy: ${this.favoriteToy}</p>
-        <button type="button" class="pets__card__button">More Info</button>
+        <button type="button" class="pets__card__button" onclick="showModal('${this.name}', '${this.description}', '${this.image}')">More Info</button>
       </div>
     `;
   }
@@ -53,6 +55,36 @@ class Pet {
   }
 }
 
+function showModal(petName, petDescription, petImage) {
+  // Create the modal element
+  const modal = document.createElement('div');
+  modal.classList.add('modal');
+
+  // Create the modal content
+  const modalContent = document.createElement('div');
+  modalContent.classList.add('modal__content');
+  modalContent.innerHTML = `
+    <img class="modal__image" src="${petImage}">
+    <div class="modal__info">
+      <h2 class="modal__info__title">${petName}</h2>
+      <p class="modal__info__description">${petDescription}</p>
+    </div>
+  `;
+
+  // Add the modal content to the modal element
+  modal.appendChild(modalContent);
+
+  // Add the modal element to the page
+  document.body.appendChild(modal);
+
+  // Add a click event listener to the modal to close it when clicked
+  modal.addEventListener('click', event => {
+    if (event.target === modal) {
+      modal.remove();
+    }
+  });
+}
+
 const fetchPets = species => {
   fetch(`http://127.0.0.1:3000/api/v1/pets${species ? `?species=${species}` : ''}`).then(response => response.json()).then(data => {
     data.forEach(pet => {
@@ -65,7 +97,9 @@ const fetchPets = species => {
         pet.favorite_food,
         pet.favorite_toy,
         pet.featured,
-        pet.annoying_woof
+        pet.annoying_woof,
+        pet.description,
+        pet.image
       ));
     });
   });

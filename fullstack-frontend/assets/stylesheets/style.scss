@@ -3,7 +3,7 @@
 
 // Header
 .main-header {
-  background-color: #7AC3B0;
+  background-color: $brand-colour;
   width: 100%;
 
   &__container {
@@ -17,7 +17,7 @@
       justify-content: center;
     }
   }
-  
+
   &__logo {
     display: inline-block;
     width: 60px;
@@ -82,7 +82,7 @@ main {
     font-weight: bold;
     margin-bottom: 10px;
     display: inline-block;
-    border-bottom: 3px solid #7AC3B0;
+    border-bottom: 3px solid $brand-colour;
     padding-bottom: 5px;
     min-width: 150px;
     margin-bottom: 25px;
@@ -136,7 +136,7 @@ main {
       text-align: center;
       text-decoration: none;
       color: #fff;
-      background-color: #7AC3B0;
+      background-color: $brand-colour;
       padding: 10px 0;
       border-radius: 5px;
       font-size: 14px;
@@ -152,7 +152,7 @@ main {
 
 // Footer
 .main-footer {
-  background-color: #7AC3B0;
+  background-color: $brand-colour;
   width: 100%;
   padding: 20px 0;
 

@@ -62,7 +62,7 @@ input {
 }
 
 .main-header {
-  background-color: #7AC3B0;
+  background-color: #7AACC3;
   width: 100%;
 }
 .main-header__container {
@@ -136,7 +136,7 @@ main {
   font-weight: bold;
   margin-bottom: 10px;
   display: inline-block;
-  border-bottom: 3px solid #7AC3B0;
+  border-bottom: 3px solid #7AACC3;
   padding-bottom: 5px;
   min-width: 150px;
   margin-bottom: 25px;
@@ -187,7 +187,7 @@ main {
   text-align: center;
   text-decoration: none;
   color: #fff;
-  background-color: #7AC3B0;
+  background-color: #7AACC3;
   padding: 10px 0;
   border-radius: 5px;
   font-size: 14px;
@@ -200,7 +200,7 @@ main {
 }
 
 .main-footer {
-  background-color: #7AC3B0;
+  background-color: #7AACC3;
   width: 100%;
   padding: 20px 0;
 }

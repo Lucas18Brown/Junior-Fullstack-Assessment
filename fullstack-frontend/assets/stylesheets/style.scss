@@ -118,10 +118,6 @@ main {
     border: 3px solid #EFEFEF;
     padding: 20px;
 
-    &__featured {
-      border: 3px solid gold;
-    }
-
     &__title {
       text-align: center;
       font-size: 18px;
@@ -153,6 +149,21 @@ main {
       border: none;
       margin-top: 30px;
       cursor: pointer;
+    }
+  }
+
+  // special properties
+
+  &__featured {
+    border: 3px solid gold;
+  }
+
+  &__annoying-woof {
+    background: $brand-colour;
+
+    .pets__card__button {
+      background-color: #fff;
+      color: #000000;
     }
   }
 }

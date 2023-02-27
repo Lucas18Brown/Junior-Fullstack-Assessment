@@ -90,5 +90,6 @@ arthur = Pet.create(
   breed: "poodle",
   favorite_food: "cheese",
   favorite_toy: "teddy",
+  featured: true,
   annoying_woof: true
 )

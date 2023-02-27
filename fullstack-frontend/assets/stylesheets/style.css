@@ -104,6 +104,7 @@ input {
   font-size: 14px;
   padding: 10px 20px;
   display: inline-block;
+  transition: color 0.3s;
 }
 .main-header__nav-link:hover {
   color: #898989;

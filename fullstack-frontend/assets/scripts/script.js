@@ -13,7 +13,8 @@ class Pet {
     breed,
     favoriteFood,
     favoriteToy,
-    featured
+    featured,
+    celebrity
   ) {
     this.name = name;
     this.species = species;
@@ -23,11 +24,14 @@ class Pet {
     this.favoriteFood = favoriteFood;
     this.favoriteToy = favoriteToy;
     this.featured = featured;
+    this.celebrity = celebrity;
   }
 
   generateCard() {
     return `
-      <div class="pets__card ${this.featured ? 'pets__featured' : ''}">
+      <div class="pets__card ${this.featured ? 'pets__featured' : ''} ${
+      this.celebrity ? 'pets__celebrity' : ''
+    } ">
         <h2 class="pets__card__title">${this.name}</h2>
           <p class="pets__card__info">Species: ${this.species}</p>
           <p class="pets__card__info">Age: ${this.age}</p>
@@ -67,7 +71,8 @@ const fetchPets = (species) => {
             pet.breed,
             pet.favorite_food,
             pet.favorite_toy,
-            pet.featured
+            pet.featured,
+            pet.celebrity
           )
         );
       });

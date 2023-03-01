@@ -83,7 +83,6 @@ input {
 }
 .main-header__nav {
   display: flex;
-  transition: 4s;
 }
 @media (max-width: calc(600px - 1px)) {
   .main-header__nav {
@@ -204,6 +203,11 @@ main {
 }
 .pets__featured {
   border: 3px solid #FFD700;
+  padding: 20px;
+}
+.pets__celebrity {
+  border: 5px solid #af69ef;
+  background-color: aquamarine;
   padding: 20px;
 }
 

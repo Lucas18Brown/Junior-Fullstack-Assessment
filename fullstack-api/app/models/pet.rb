@@ -1,6 +1,7 @@
 require 'pet_filters'
 class Pet < ApplicationRecord
   include PetFilters
+  belongs_to :user
 
   scope :filter_pets_by_species, -> (species) { where species: species }
   scope :filter_pets_by_breed, -> (breed) { where breed: breed }

@@ -11,7 +11,7 @@ module Api
       private
 
       def filtering_params
-        params.permit(:species, :page)
+        params.permit(:species, :page, :age, :breed)
       end
     end
   end

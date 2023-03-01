@@ -6,5 +6,5 @@ class Pet < ApplicationRecord
   scope :filter_pets_by_breed, -> (breed) { where breed: breed }
   scope :filter_pets_by_age, -> (age) { where age: age }
 
-  paginates_per 5
+  paginates_per 10
 end

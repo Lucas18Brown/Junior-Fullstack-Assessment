@@ -55,9 +55,9 @@ class Pet {
   }
 }
 
-const fetchPets = (species) => {
+const fetchPets = (species, breed, age) => {
   fetch(
-    `http://127.0.0.1:3000/api/v1/pets${species ? `?species=${species}` : ''}`
+    `http://127.0.0.1:3000/api/v1/pets${species ? `?species=${species}` : '' || breed ? `?breed=${breed}` : '' ||  age ? `?age=${age}` : ''}`
   )
     .then((response) => response.json())
     .then((data) => {
@@ -82,4 +82,6 @@ const fetchPets = (species) => {
 // Check params for "species" and fetch pets accordingly
 const params = new URLSearchParams(window.location.search);
 const species = params.get('species');
-fetchPets(species);
+const breed = params.get('breed');
+const age = params.get('age');
+fetchPets(species, breed, age);

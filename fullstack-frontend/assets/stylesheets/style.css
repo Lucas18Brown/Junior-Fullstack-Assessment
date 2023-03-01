@@ -62,7 +62,7 @@ input {
 }
 
 .main-header {
-  background-color: #7AC3B0;
+  background-color: #7AACC3;
   width: 100%;
 }
 .main-header__container {
@@ -83,6 +83,7 @@ input {
 }
 .main-header__nav {
   display: flex;
+  transition: 4s;
 }
 @media (max-width: calc(600px - 1px)) {
   .main-header__nav {
@@ -104,9 +105,12 @@ input {
   font-size: 14px;
   padding: 10px 20px;
   display: inline-block;
+  opacity: 1;
+  transition: color 0.8s;
 }
 .main-header__nav-link:hover {
   color: #898989;
+  opacity: 0.2;
 }
 
 main {
@@ -136,7 +140,7 @@ main {
   font-weight: bold;
   margin-bottom: 10px;
   display: inline-block;
-  border-bottom: 3px solid #7AC3B0;
+  border-bottom: 3px solid #7AACC3;
   padding-bottom: 5px;
   min-width: 150px;
   margin-bottom: 25px;
@@ -187,7 +191,7 @@ main {
   text-align: center;
   text-decoration: none;
   color: #fff;
-  background-color: #7AC3B0;
+  background-color: #7AACC3;
   padding: 10px 0;
   border-radius: 5px;
   font-size: 14px;
@@ -198,9 +202,13 @@ main {
   margin-top: 30px;
   cursor: pointer;
 }
+.pets__featured {
+  border: 3px solid #FFD700;
+  padding: 20px;
+}
 
 .main-footer {
-  background-color: #7AC3B0;
+  background-color: #7AACC3;
   width: 100%;
   padding: 20px 0;
 }

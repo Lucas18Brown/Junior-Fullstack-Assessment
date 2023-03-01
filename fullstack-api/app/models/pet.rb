@@ -7,4 +7,6 @@ class Pet < ApplicationRecord
   scope :filter_pets_by_age, -> (age) { where age: age }
 
   paginates_per 10
+
+  validates :name, :species, :age, :color, :breed, presence: true
 end

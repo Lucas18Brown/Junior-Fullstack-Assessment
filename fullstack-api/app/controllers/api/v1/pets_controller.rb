@@ -4,7 +4,7 @@ module Api
     class PetsController < ApplicationController
 
       def index
-        @pets = Pet.filter(filtering_params).order(:featured, :name)
+        @pets = Pet.filter(filtering_params).order(:featured, :name).page filtering_params[:page]
         render json: @pets, status: :ok
       end
 

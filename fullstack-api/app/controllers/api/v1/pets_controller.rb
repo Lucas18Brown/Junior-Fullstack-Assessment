@@ -4,7 +4,16 @@ module Api
     class PetsController < ApplicationController
       before_action :set_pet_params, only: %i[edit update destroy]
       def index
-        @pets = Pet.filter(filtering_params).order(:featured, :name).page filtering_params[:page]
+        @pets = Pet.filter(filtering_params).order(:featured, :name)
+          .page(filtering_params[:page] || 1)
+          .per(filtering_params[:per] || 2)
+
+           # Set headers
+          headers['X-Total-Count'] = @pets.total_count.to_s
+          headers['X-Total-Pages'] = @pets.total_pages.to_s
+          headers['X-Page'] = @pets.current_page.to_s
+          headers['X-Per-Page'] = @pets.limit_value.to_s
+
         render json: @pets, status: :ok
       end
 
@@ -44,7 +53,7 @@ module Api
       private
 
       def filtering_params
-        params.permit(:species, :page, :age, :breed)
+        params.permit(:page, :per, :species, :age, :breed)
       end
 
       def pet_params
@@ -52,7 +61,7 @@ module Api
       end
 
       def set_pet_params
-        @pet = Pet.find_by(params[:include])
+        @pet = Pet.find(params[:id])
       end
     end
   end

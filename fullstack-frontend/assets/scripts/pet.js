@@ -1,5 +1,9 @@
+import { openModal } from "./openModal.js";
+import { closeModal } from "./closeModal.js";
+
 export default class Pet {
   constructor(
+    id,
     name,
     species,
     age,
@@ -8,8 +12,11 @@ export default class Pet {
     favoriteFood,
     favoriteToy,
     featured,
-    celebrity
+    celebrity,
+    description,
+    image
   ) {
+    this.id = id;
     this.name = name;
     this.species = species;
     this.age = age;
@@ -19,11 +26,13 @@ export default class Pet {
     this.favoriteToy = favoriteToy;
     this.featured = featured;
     this.celebrity = celebrity;
+    this.description = description;
+    this.image = image;
   }
 
   generateCard() {
     return `
-      <div class="pets__card ${this.featured ? 'pets__featured' : ''} ${
+      <div id="${this.name}" class="pets__card ${this.featured ? 'pets__featured' : ''} ${
       this.celebrity ? 'pets__celebrity' : ''
     } ">
         <h2 class="pets__card__title">${this.name}</h2>
@@ -33,7 +42,7 @@ export default class Pet {
           <p class="pets__card__info">Breed: ${this.breed}</p>
           <p class="pets__card__info">Favorite Food: ${this.favoriteFood}</p>
           <p class="pets__card__info">Favorite Toy: ${this.favoriteToy}</p>
-        <button type="button" class="pets__card__button">More Info</button>
+          <button type="button" class="pets__card__open__button" data-pet-id="${this.id}">More Info</button>
       </div>
     `;
   }
@@ -43,8 +52,23 @@ export default class Pet {
     if (!petsGrid) return;
 
     petsGrid.innerHTML = '';
+
     window.pets.forEach((pet) => {
       petsGrid.innerHTML += pet.generateCard();
+
     });
+    window.pets.forEach((pet) => {
+      pet.addOpenModalEvent();
+    });
+  }
+
+  addOpenModalEvent() {
+    const petCards = document.querySelectorAll('.pets__card');
+    petCards.forEach(petCard => {
+      const buttons = petCard.querySelectorAll(`button[data-pet-id="${this.id}"]`);
+      buttons.forEach(button => {
+      button.addEventListener('click', () => openModal(this));
+    });
+  });
   }
 }

@@ -103,6 +103,41 @@ main {
   }
 }
 
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 10000;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
 .pagination {
   display: flex;
   justify-content: center;
@@ -122,38 +157,6 @@ main {
 
 .pets {
   margin-bottom: 0;
-
-  &__model {
-    display: flex;
-    z-index: 2;
-    flex-direction: column;
-    justify-content: center;
-    gap: 0.4rem;
-    width: 450px;
-    padding: 1.3rem;
-    min-height: 250px;
-    position: absolute;
-    top: 20%;
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 15px;
-  }
-
-  &__modal p {
-    font-size: 0.9rem;
-    color: #777;
-    margin: 0.4rem 0 0.2rem;
-  }
-
-  &__flex {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  &__hidden {
-    display: none;
-  }
 
   &__grid {
     display: grid;
@@ -184,7 +187,7 @@ main {
       margin-bottom: 12px;
     }
 
-    &__btn__open {
+    &__button{
       display: block;
       width: 100%;
       text-align: center;
@@ -200,13 +203,6 @@ main {
       border: none;
       margin-top: 30px;
       cursor: pointer;
-    }
-  
-    &__btn_close {
-      transform: translate(10px, -20px);
-      padding: 0.5rem 0.7rem;
-      background: #eee;
-      border-radius: 50%;
     }
   }
 

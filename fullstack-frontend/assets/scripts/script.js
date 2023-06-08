@@ -32,6 +32,7 @@ const fetchPets = (species, breed, age, page, per, name, searchTerm, sortBy) => 
       data.forEach((pet) => {
         pushPet(
           new Pet(
+            pet.id,
             pet.name,
             pet.species,
             pet.age,
@@ -40,7 +41,9 @@ const fetchPets = (species, breed, age, page, per, name, searchTerm, sortBy) => 
             pet.favorite_food,
             pet.favorite_toy,
             pet.featured,
-            pet.celebrity
+            pet.celebrity,
+            pet.description,
+            pet.image_path
           )
         );
       });

@@ -1,5 +1,5 @@
-import { openModal } from "./openModal.js";
-import { closeModal } from "./closeModal.js";
+import { openModal } from "./open-modal.js";
+import { closeModal } from "./close-modal.js";
 
 export default class Pet {
   constructor(

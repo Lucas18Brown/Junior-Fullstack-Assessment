@@ -1,5 +1,5 @@
 
-import { closeModal } from "./closeModal.js";
+import { closeModal } from "./close-modal.js";
 
 export const openModal = (pet) => {
   const modalElement = `

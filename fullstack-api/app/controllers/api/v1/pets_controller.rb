@@ -4,11 +4,21 @@ module Api
     class PetsController < ApplicationController
       before_action :set_pet_params, only: %i[edit update destroy]
       def index
-        @pets = Pet.filter(filtering_params).order(:featured, :name)
-          .page(filtering_params[:page] || 1)
-          .per(filtering_params[:per] || 2)
+        sort_by = filtering_params[:sort_by]
+        sort_column, sort_direction = sort_by.split('_') if sort_by
 
-           # Set headers
+        # Prevent Injection attacks and check if the sort_column and sort_direction are valid
+        if sort_column && sort_direction && Pet.column_names.include?(sort_column) && ['asc', 'desc'].include?(sort_direction)
+          @pets = Pet.filter(filtering_params.slice(:page, :per, :species, :age, :breed, :name, :search))
+          .order(sort_column => sort_direction)
+        else
+          @pets = Pet.filter(filtering_params)
+          .order(:featured, :name)
+        end
+
+        @pets = @pets.page(filtering_params[:page] || 1).per(filtering_params[:per] || 2)
+
+        # Set headers
           headers['X-Total-Count'] = @pets.total_count.to_s
           headers['X-Total-Pages'] = @pets.total_pages.to_s
           headers['X-Page'] = @pets.current_page.to_s
@@ -53,7 +63,7 @@ module Api
       private
 
       def filtering_params
-        params.permit(:page, :per, :species, :age, :breed)
+        params.permit(:page, :per, :species, :age, :breed, :name, :search, :sort_by)
       end
 
       def pet_params

@@ -104,15 +104,16 @@ input {
   font-size: 14px;
   padding: 10px 20px;
   display: inline-block;
-  transition: opacity, color 0.3s;
   opacity: 1;
+  transition: color 0.8s;
 }
 .main-header__nav-link:hover {
   color: #898989;
-  opacity: 0.65;
+  opacity: 0.2;
 }
 
 main {
+  position: relative;
   min-height: calc(100vh - 120px);
   padding: 60px 0;
 }
@@ -152,6 +153,57 @@ main {
 .intro__content, .pets__content {
   font-size: 14px;
   line-height: 1.5;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 10000;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error_messages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #721c24;
 }
 
 .pets {
@@ -202,65 +254,13 @@ main {
   cursor: pointer;
 }
 .pets__featured {
-  border: 3px solid gold;
-}
-.pets__annoying-woof {
-  background: #7AACC3;
-}
-.pets__annoying-woof .pets__card__button {
-  background-color: #fff;
-  color: #000000;
-}
-
-.modal {
-  position: fixed;
-  z-index: 999;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-.modal__content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 400px;
-  min-height: 400px;
-  background-color: #fff;
+  border: 3px solid #FFD700;
   padding: 20px;
-  align-items: center;
 }
-.modal__close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-.modal__image {
-  width: 100%;
-  height: 500px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
-}
-.modal__info {
-  padding: 20px 0;
-}
-.modal__info__title {
-  font-weight: 700;
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-.modal__info__description {
-  margin-top: 0;
-  line-height: 21px;
-  padding-top: 10px;
-  border-top: 1px solid #EFEFEF;
-}
-.modal__open {
-  display: block;
+.pets__celebrity {
+  border: 5px solid #af69ef;
+  background-color: aquamarine;
+  padding: 20px;
 }
 
 .main-footer {

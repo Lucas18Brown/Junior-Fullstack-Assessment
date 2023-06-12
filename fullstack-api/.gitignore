@@ -7,6 +7,12 @@
 # Ignore bundler config.
 /.bundle
 
+# Ignore tool versions
+.tool-versions
+
+# Ignore vs code local Settings
+settings.json
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
@@ -24,6 +30,9 @@
 /tmp/storage/*
 !/tmp/storage/
 !/tmp/storage/.keep
+
+# Ignore macOs specific Desktop Services Store
+.DS_Store
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key

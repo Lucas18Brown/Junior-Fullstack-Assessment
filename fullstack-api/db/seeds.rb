@@ -11,7 +11,9 @@ fido = Pet.create(
   color: "brown",
   breed: "labrador",
   favorite_food: "steak",
-  favorite_toy: "bone"
+  favorite_toy: "bone",
+  description: "Steals Sausages and your soul",
+  image_path: "/assets/images/fido.png"
 )
 
 # Create spot
@@ -22,7 +24,9 @@ spot = Pet.create(
   color: "black",
   breed: "labrador",
   favorite_food: "steak",
-  favorite_toy: "ball"
+  favorite_toy: "ball",
+  description: "Can you spot him ?",
+  image_path: "/assets/images/spot.png"
 )
 
 # Create rover
@@ -34,7 +38,9 @@ rover = Pet.create(
   breed: "labrador",
   favorite_food: "steak",
   favorite_toy: "rope",
-  featured: true
+  featured: true,
+  description: "Hot diggedy Dog, woof woof",
+  image_path: "/assets/images/rover.png"
 )
 
 # Create fluffy
@@ -45,7 +51,9 @@ fluffy = Pet.create(
   color: "white",
   breed: "persian",
   favorite_food: "fish",
-  favorite_toy: "ball"
+  favorite_toy: "ball",
+  description: "One mean Cat, dont get close",
+  image_path: "/assets/images/fluffy.png"
 )
 
 # Create patches
@@ -57,7 +65,9 @@ patches = Pet.create(
   breed: "siamese",
   favorite_food: "fish",
   favorite_toy: "string",
-  featured: true
+  featured: true,
+  description: "One patch work Cat, yessss maaasssssterrr !!",
+  image_path: "/assets/images/patches.png"
 )
 
 # Create tiger
@@ -68,7 +78,9 @@ tiger = Pet.create(
   color: "orange",
   breed: "siamese",
   favorite_food: "fish",
-  favorite_toy: "yarn"
+  favorite_toy: "yarn",
+  description: "One big Cat, down boy !!!",
+  image_path: "/assets/images/tiger.png"
 )
 
 # Create smokey
@@ -79,7 +91,23 @@ smokey = Pet.create(
   color: "gray",
   breed: "persian",
   favorite_food: "fish",
-  favorite_toy: "feather"
+  favorite_toy: "feather",
+  description: "One smokey Cat, cough cough cough",
+  image_path: "/assets/images/smokey.png"
+)
+
+# Create wilfred
+wilfred = Pet.create(
+  name: "Wilfred",
+  species: "cat",
+  age: 30,
+  color: "white",
+  breed: "persian",
+  favorite_food: "Surströmming",
+  favorite_toy: "yarn",
+  celebrity: true,
+  description: "One mean Cat, dont get close",
+  image_path: "/assets/images/wilfred.png"
 )
 
 arthur = Pet.create(

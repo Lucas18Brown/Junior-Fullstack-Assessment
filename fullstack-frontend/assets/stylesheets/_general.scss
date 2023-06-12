@@ -14,6 +14,8 @@ $containers: (
 $desktop: '(min-width: #{map.get($containers, "mobile", "breakpoint")})'; // Usage: @media #{$desktop} { ... }
 $mobile: '(max-width: calc(#{map.get($containers, "mobile", "breakpoint")} - 1px))'; // Usage: @media #{$mobile} { ... }
 
+$brand-colour: #7AACC3;
+
 .container {
   width: map.get($containers, "default-width");
   max-width: map.get($containers, "desktop", "max-width");
